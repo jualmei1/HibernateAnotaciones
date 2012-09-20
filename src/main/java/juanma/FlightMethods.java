@@ -53,7 +53,7 @@ public class FlightMethods
     private List<Flight> listEvents() {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        List<Flight> result = (List<Flight>)session.createQuery("from VUELO").list();
+        List<Flight> result = (List<Flight>)session.createQuery("from Flight").list();
         session.getTransaction().commit();
         for (Flight evento : result) {
             log.info("Leido: "+evento);
